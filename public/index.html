@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Video Thumbnails</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles_folders.css">
+    <link rel="stylesheet" type="text/css" href="./fonts/fontawesome612/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./media/fox_hound.png">
+</head>
+
+<body class="flex-column">
+    <!-- ondrop="handleDrop(event)" ondragover="allowDrop(event)" -->
+
+    <div class="folder_container">
+    <!--  <div class="folder_animals relative">
+            <button type="button" data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals"
+                onclick="moverArchivo(event)">animals</button>
+
+            <div class="folder_animals_ex">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\birds"
+                    onclick="moverArchivo(event)">birds
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\cappys"
+                    onclick="moverArchivo(event)">cappys
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\cats"
+                    onclick="moverArchivo(event)">cats
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\doggos"
+                    onclick="moverArchivo(event)">doggos
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\etc"
+                    onclick="moverArchivo(event)">etc
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\froggo"
+                    onclick="moverArchivo(event)">froggo
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\monke"
+                    onclick="moverArchivo(event)">monke
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\ocean"
+                    onclick="moverArchivo(event)">ocean
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\animals\racoon"
+                    onclick="moverArchivo(event)">racoon
+                </button>
+            </div>
+        </div>
+
+        <div class="folder_anime relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime" onclick="
+                moverArchivo(event)">anime</button>
+
+            <div class="folder_anime_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\20th century boys"
+                    onclick="moverArchivo(event)">20th century boys
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\avatar"
+                    onclick="moverArchivo(event)">avatar
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\baki"
+                    onclick="moverArchivo(event)">baki
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\berserk"
+                    onclick="moverArchivo(event)">berserk
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\black cover"
+                    onclick="moverArchivo(event)">black cover
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\bleach"
+                    onclick="moverArchivo(event)">bleach
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\chainsawman"
+                    onclick="moverArchivo(event)">chainsawman
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\code geass"
+                    onclick="moverArchivo(event)">code geass
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\cowboy bebop"
+                    onclick="moverArchivo(event)">cowboy bebop
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\demon slayer"
+                    onclick="moverArchivo(event)">demon slayer
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\dr stone"
+                    onclick="moverArchivo(event)">dr stone
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\dragon ball"
+                    onclick="moverArchivo(event)">dragon ball
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\evangelion"
+                    onclick="moverArchivo(event)">evangelion
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\full metal alchemist"
+                    onclick="moverArchivo(event)">full metal alchemist
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\ghibli"
+                    onclick="moverArchivo(event)">ghibli
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\hotline"
+                    onclick="moverArchivo(event)">hotline
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\hxh"
+                    onclick="moverArchivo(event)">hxh
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\jojo"
+                    onclick="moverArchivo(event)">jojo
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\jujutsu kaisen"
+                    onclick="moverArchivo(event)">jujutsu kaisen
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\kill la kill"
+                    onclick="moverArchivo(event)">kill la kill
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\lain"
+                    onclick="moverArchivo(event)">lain
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\madoka"
+                    onclick="moverArchivo(event)">madoka
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\mob psycho"
+                    onclick="moverArchivo(event)">mob psycho
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\monster"
+                    onclick="moverArchivo(event)">monster
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\my hero academia"
+                    onclick="moverArchivo(event)">my hero academia
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\naruto"
+                    onclick="moverArchivo(event)">naruto
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\one piece"
+                    onclick="moverArchivo(event)">one piece
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\one punch"
+                    onclick="moverArchivo(event)">one punch
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\pokemon"
+                    onclick="moverArchivo(event)">pokemon
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\record of ragnarok"
+                    onclick="moverArchivo(event)">record of ragnarok
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\seven deadly sins"
+                    onclick="moverArchivo(event)">seven deadly sins
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\shin chan"
+                    onclick="moverArchivo(event)">shin chan
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\shingeki"
+                    onclick="moverArchivo(event)">shingeki
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\slime"
+                    onclick="moverArchivo(event)">slime
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\steins gate"
+                    onclick="moverArchivo(event)">steins gate
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\tengen toppa"
+                    onclick="moverArchivo(event)">tengen toppa
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\anime\trigun"
+                    onclick="moverArchivo(event)">trigun
+                </button>
+            </div>
+        </div>
+
+        <button class="folder_art" data-folder-path="D:\Stuff\Desktop\b\awemer\download\art"
+            onclick="moverArchivo(event)">art</button>
+        <button class="folder_co" data-folder-path="D:\Stuff\Desktop\b\awemer\download\co"
+            onclick="moverArchivo(event)">co</button>
+
+        <div class="folder_coche relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche"
+                onclick="moverArchivo(event)">coche</button>
+
+            <div class="folder_coche_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche\f1" onclick="moverArchivo(event)">f1
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche\fernando"
+                    onclick="moverArchivo(event)">fernando
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche\initiald"
+                    onclick="moverArchivo(event)">initiald
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche\mcqueen"
+                    onclick="moverArchivo(event)">mcqueen
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche\mood"
+                    onclick="moverArchivo(event)">mood
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche\nascar"
+                    onclick="moverArchivo(event)">nascar
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\coche\rally"
+                    onclick="moverArchivo(event)">rally
+                </button>
+            </div>
+        </div>
+
+        <button class="folder_comfy" data-folder-path="D:\Stuff\Desktop\b\awemer\download\comfy"
+            onclick="moverArchivo(event)">comfy</button>
+
+        <div class="folder_cute relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\cute"
+                onclick="moverArchivo(event)">cute</button>
+
+            <div class="folder_cute_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\cute\2D" onclick="moverArchivo(event)">2D
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\cute\fboy"
+                    onclick="moverArchivo(event)">fboy
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\cute\top" onclick="moverArchivo(event)">top
+                </button>
+            </div>
+        </div>
+
+        <button class="folder_cute_art" data-folder-path="D:\Stuff\Desktop\b\awemer\download\cute art"
+            onclick="moverArchivo(event)">cute art</button>
+        <button class="folder_dance" data-folder-path="D:\Stuff\Desktop\b\awemer\download\dance"
+            onclick="moverArchivo(event)">dance</button>
+        <button class="folder_espana" data-folder-path="D:\Stuff\Desktop\b\awemer\download\españa"
+            onclick="moverArchivo(event)">españa</button>
+        <button class="folder_etc" data-folder-path="D:\Stuff\Desktop\b\awemer\download\etc"
+            onclick="moverArchivo(event)">etc</button>
+
+        <div class="folder_family_friendly relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\family friendly"
+                onclick="moverArchivo(event)">family friendly</button>
+
+            <div class="folder_family_friendly_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\family friendly\gay"
+                    onclick="moverArchivo(event)">gay
+                </button>
+            </div>
+        </div>
+
+        <button class="folder_fashion" data-folder-path="D:\Stuff\Desktop\b\awemer\download\fashion"
+            onclick="moverArchivo(event)">fashion</button>
+        <button class="folder_food_cooking" data-folder-path="D:\Stuff\Desktop\b\awemer\download\food-cooking"
+            onclick="moverArchivo(event)">food cooking
+        </button>
+        <button class="folder_history" data-folder-path="D:\Stuff\Desktop\b\awemer\download\history"
+            onclick="moverArchivo(event)">history</button>
+
+        <div class="folder_kino relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino"
+                onclick="moverArchivo(event)">kino</button>
+
+            <div class="folder_kino_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\actors"
+                    onclick="moverArchivo(event)">actors
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\american psycho"
+                    onclick="moverArchivo(event)">american psycho
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\Animacion"
+                    onclick="moverArchivo(event)">animacion
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\back to the future"
+                    onclick="moverArchivo(event)">back to the future
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\barry"
+                    onclick="moverArchivo(event)">barry
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\Better Call Saul - Breaking Bad"
+                    onclick="moverArchivo(event)">bcs/bb
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\blade runner"
+                    onclick="moverArchivo(event)">blade runner
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\bullet train"
+                    onclick="moverArchivo(event)">bulle train
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\cars"
+                    onclick="moverArchivo(event)">cars
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\classic"
+                    onclick="moverArchivo(event)">classic
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\coches"
+                    onclick="moverArchivo(event)">coches
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\colors"
+                    onclick="moverArchivo(event)">colors
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\cruella"
+                    onclick="moverArchivo(event)">cruella
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\cyberpunk"
+                    onclick="moverArchivo(event)">cyberpunk
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\dune"
+                    onclick="moverArchivo(event)">dune
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\fallout"
+                    onclick="moverArchivo(event)">fallout
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\fight club"
+                    onclick="moverArchivo(event)">fight club
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\game of thrones"
+                    onclick="moverArchivo(event)">game of thrones
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\green book"
+                    onclick="moverArchivo(event)">green book
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\harry potter"
+                    onclick="moverArchivo(event)">harry potter
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\i drive"
+                    onclick="moverArchivo(event)">i drive
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\invencible"
+                    onclick="moverArchivo(event)">invencible
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\james bond"
+                    onclick="moverArchivo(event)">james bond
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\john wick"
+                    onclick="moverArchivo(event)">john wick
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\kingdom of heaven"
+                    onclick="moverArchivo(event)">kingdom of heaven
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\kung fu panda"
+                    onclick="moverArchivo(event)">kung fu panda
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\lord of the rings"
+                    onclick="moverArchivo(event)">lord of the rings
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\mad max"
+                    onclick="moverArchivo(event)">mad max
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\marvel dc"
+                    onclick="moverArchivo(event)">marvel dc
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\nightcrawler"
+                    onclick="moverArchivo(event)">nightcrawler
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\pacific rim"
+                    onclick="moverArchivo(event)">pacific rim
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\piratas del caribe"
+                    onclick="moverArchivo(event)">piratas del caribe
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\power rangers"
+                    onclick="moverArchivo(event)">power rangers
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\rome"
+                    onclick="moverArchivo(event)">rome
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\sherlock"
+                    onclick="moverArchivo(event)">sherlock
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\shrek"
+                    onclick="moverArchivo(event)">shrek
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\south park"
+                    onclick="moverArchivo(event)">south park
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\spìderman"
+                    onclick="moverArchivo(event)">spìderman
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\star wars"
+                    onclick="moverArchivo(event)">star wars
+                </button>
+                <button
+                    data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\Tarantino - Pulp Filction - Inglorious Bastards"
+                    onclick="moverArchivo(event)">tarantino
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\the boys"
+                    onclick="moverArchivo(event)">the boys
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\the godfather"
+                    onclick="moverArchivo(event)">the godfather
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\the office"
+                    onclick="moverArchivo(event)">the office
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\the simpsons"
+                    onclick="moverArchivo(event)">the simpsons
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\the sopranos"
+                    onclick="moverArchivo(event)">the sopranos
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\the truman show"
+                    onclick="moverArchivo(event)">the truman show
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\transformers"
+                    onclick="moverArchivo(event)">transformers
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\tron"
+                    onclick="moverArchivo(event)">tron
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\twilight"
+                    onclick="moverArchivo(event)">twilight
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\v de vendetta"
+                    onclick="moverArchivo(event)">v de vendetta
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\kino\war" onclick="moverArchivo(event)">war
+                </button>
+            </div>
+        </div>
+
+        <div class="folder_knowledge relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\knowledge"
+                onclick="moverArchivo(event)">knowledge</button>
+
+            <div class="folder_knowledge_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\knowledge\css"
+                    onclick="moverArchivo(event)">css
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\knowledge\libros"
+                    onclick="moverArchivo(event)">libros
+                </button>
+            </div>
+        </div>
+
+        <button class="folder_motivation" data-folder-path="D:\Stuff\Desktop\b\awemer\download\motivation''"
+            onclick="moverArchivo(event)">motivation</button>
+        <button class="folder_paradoya" data-folder-path="D:\Stuff\Desktop\b\awemer\download\paradoya"
+            onclick="moverArchivo(event)">paradoya</button>
+        <button class="folder_pol" data-folder-path="D:\Stuff\Desktop\b\awemer\download\pol"
+            onclick="moverArchivo(event)">pol</button>
+        <button class="folder_sadness" data-folder-path="D:\Stuff\Desktop\b\awemer\download\sadness"
+            onclick="moverArchivo(event)">sadness</button>
+        <button class="folder_sigma" data-folder-path="D:\Stuff\Desktop\b\awemer\download\sigma"
+            onclick="moverArchivo(event)">sigma</button>
+        <button class="folder_songs" data-folder-path="D:\Stuff\Desktop\b\awemer\download\songs"
+            onclick="moverArchivo(event)">songs</button>
+        <button class="folder_sports" data-folder-path="D:\Stuff\Desktop\b\awemer\download\sports"
+            onclick="moverArchivo(event)">sports</button>
+        <button class="folder_stoic" data-folder-path="D:\Stuff\Desktop\b\awemer\download\stoic"
+            onclick="moverArchivo(event)">stoic</button>
+
+        <div class="folder_sus relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\sus" onclick="moverArchivo(event)">sus</button>
+
+            <div class="folder_sus_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\sus\ai" onclick="moverArchivo(event)">ai
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\sus\plastic"
+                    onclick="moverArchivo(event)">plastic
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\sus\top" onclick="moverArchivo(event)">top
+                </button>
+            </div>
+        </div>
+
+        <div class="folder_videogames relative">
+            <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames" onclick="moverArchivo(event)">
+                videogames</button>
+
+            <div class="folder_videogames_ex hidden">
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\Armored Core - Titanfall"
+                    onclick="moverArchivo(event)">armored core - titanfall
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\Assassin's Creed"
+                    onclick="moverArchivo(event)">assassin's creed
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\batman"
+                    onclick="moverArchivo(event)">batman
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\bayonetta"
+                    onclick="moverArchivo(event)">bayonetta
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\bethesda"
+                    onclick="moverArchivo(event)">bethesda
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\bioshock"
+                    onclick="moverArchivo(event)">bioshock
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\blizzard"
+                    onclick="moverArchivo(event)">blizzard
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\BrawlStars"
+                    onclick="moverArchivo(event)">brawlstars
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\coches"
+                    onclick="moverArchivo(event)">coches
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\cyberpunk"
+                    onclick="moverArchivo(event)">cyberpunk
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\destiny"
+                    onclick="moverArchivo(event)">destiny
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\detroit become human"
+                    onclick="moverArchivo(event)">detroit become human
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\devil may cry"
+                    onclick="moverArchivo(event)">devil may cry
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\fall guys"
+                    onclick="moverArchivo(event)">fall guys
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\fighting games"
+                    onclick="moverArchivo(event)">fighting games
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\final fantasy"
+                    onclick="moverArchivo(event)">final fantasy
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\fortnite"
+                    onclick="moverArchivo(event)">fortnite
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\frases"
+                    onclick="moverArchivo(event)">frases
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\from software"
+                    onclick="moverArchivo(event)">from software
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\genshin impact"
+                    onclick="moverArchivo(event)">genshin impact
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\god of war"
+                    onclick="moverArchivo(event)">god of war
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\gravity rush"
+                    onclick="moverArchivo(event)">gravity rush
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\harry potter"
+                    onclick="moverArchivo(event)">harry potter
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\helldivers"
+                    onclick="moverArchivo(event)">helldivers
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\kingdom hearts"
+                    onclick="moverArchivo(event)">kingdom hearts
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\league of legends"
+                    onclick="moverArchivo(event)">league of legends
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\metal gear"
+                    onclick="moverArchivo(event)">metal gear
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\minecraft"
+                    onclick="moverArchivo(event)">minecraft
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\monster hunter"
+                    onclick="moverArchivo(event)">monster hunter
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\nier automata"
+                    onclick="moverArchivo(event)">nier automata
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\nintendo"
+                    onclick="moverArchivo(event)">nintendo
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\paradox games"
+                    onclick="moverArchivo(event)">paradox games
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\Persona - Shin Megami"
+                    onclick="moverArchivo(event)">persona - shin megami
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\phoenix wright"
+                    onclick="moverArchivo(event)">phoenix wright
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\pinnochio"
+                    onclick="moverArchivo(event)">pinnochio
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\pokemon"
+                    onclick="moverArchivo(event)">pokemon
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\Residen Evil - Silent Hills"
+                    onclick="moverArchivo(event)">resident evil - silent hills
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\roblox"
+                    onclick="moverArchivo(event)">roblox
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\rocket league"
+                    onclick="moverArchivo(event)">rocket league
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\rockstar"
+                    onclick="moverArchivo(event)">rockstar
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\sonic"
+                    onclick="moverArchivo(event)">sonic
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\sony"
+                    onclick="moverArchivo(event)">sony
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\spiderman"
+                    onclick="moverArchivo(event)">spiderman
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\star wars"
+                    onclick="moverArchivo(event)">star wars
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\steam"
+                    onclick="moverArchivo(event)">steam
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\steep y parecidos"
+                    onclick="moverArchivo(event)">steep y parecidos
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\team fortress 2"
+                    onclick="moverArchivo(event)">team fortress 2
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\ubisoft"
+                    onclick="moverArchivo(event)">ubisoft
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\war"
+                    onclick="moverArchivo(event)">war
+                </button>
+                <button data-folder-path="D:\Stuff\Desktop\b\awemer\download\videogames\yakuza"
+                    onclick="moverArchivo(event)">yakuza
+                </button>
+            </div>
+
+        </div>-->
+    </div> 
+
+    <div class="thumbnail-video-container flex-row">
+        <ul class="thumbnail-grid" id="video-list">
+            <!-- Video list will be injected here -->
+        </ul>
+        <div class="upper-video-container flex-column">
+            <div class="video-container hidden" id="video-container">
+                <video id="video-player" controls autoplay loop>
+                    <source id="video-source" src="" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-metadata"></div>
+        </div>
+        <button class="boton-borrar" onclick="moverBorrar()"><i class="fa-regular fa-trash-can"></i></button>
+        <button class="boton-nombre" onclick="mostrarNombre()"><i class="fa-solid fa-heart"></i></button>
+        <button class="boton-path" onclick="mostrarPath()"><i class="fa-regular fa-folder-open"></i></i></button>
+    </div>
+
+    <div class="nombre-archivo"></div>
+    <button class="refrescar" onclick="llamada()"><i class="fa-solid fa-rotate-right"></i></button>
+
+    <div class="variado">
+        <i class="fa-solid fa-chevron-left"></i>
+        <button class="theme" onclick="cambiarTema()"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        <button class="theme" onclick="loadThumbnails()"><i class="fa-solid fa-file-arrow-down"></i></button>
+        <button class="theme" onclick="createFolder()"><i class="fa-solid fa-folder-plus"></i></button>
+    </div>
+
+    <div class="creacion-ruta-carpeta">
+        <p>Ruta carpeta - main</p>
+        <input type="text" class="principal"></input>
+        <p>Subcarpeta - sub</p>
+        <input type="text" class="secundaria"></input>
+        <button class="mandar" onclick="mandarCarpeta()">Crear Carpeta</button>
+    </div>
+
+    <!-- <div class="pagination">
+        <button class="left-arrow"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="right-arrow"><i class="fa-solid fa-arrow-right"></i></button>
+        </div> -->
+    <script src="./js/general.js"></script>
+    <script src="./js/mouse_control.js"></script>
+    <script src="./js/fetch_video_list.js"></script>
+    <script src="./js/fetch_folder_list.js"></script>
+    <script src="./js/fetch_mover.js"></script>
+    <script src="./js/fetch_borrar.js"></script>
+    <script src="./js/fetch_crear_carpeta.js"></script>
+    <script src="./js/event_listeners.js"></script>
+</body>
+
+</html>
