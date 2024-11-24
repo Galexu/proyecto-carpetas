@@ -84,6 +84,9 @@ async function carpetaInferior(carp) {
                 return;
             }
 
+            "holas"
+            "hola2"
+
             // carpetas.forEach(carpeta => {
             //     const archivoPath = path.join(pathCompleto, carpeta);
             //     if (fs.statSync(archivoPath).isDirectory()) {
