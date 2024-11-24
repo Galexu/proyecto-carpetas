@@ -1,0 +1,103 @@
+button {
+    /* display: block; */
+    /* width: 65px; */
+    /* padding: 8px; */
+    margin: 3px;
+    padding: 6px;
+    border: 2px solid var(--color-1);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: background-color 0.2s, transform 0.1s;
+    background-color: var(--color-3);
+}
+
+.folder_container button {
+    /* display: block; */
+    width: auto;
+    height: auto;
+    /* padding: 6px; */
+    margin: 3px;
+    border: 2px solid var(--color-1);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: background-color 0.2s, transform 0.1s;
+    background-color: var(--color-3);
+}
+
+button:hover {
+    background-color: var(--color-4);
+}
+
+button:focus {
+    outline: none;
+    /* background-color: var(--color-2); */
+}
+
+button:active {
+    background-color: var(--color-2);
+    transform: scale(0.98);
+    outline: none;
+}
+
+.folder_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px solid var(--color-1);
+    /* margin: 5px; */
+    /* margin-bottom: 0px; */
+    /* height: 9vh; */
+    height: auto;
+    flex-wrap: wrap;
+}
+
+/* .folder_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px solid var(--color-1);
+    margin-bottom: 0px;
+    height: auto;
+    flex-wrap: wrap;
+} */
+
+.folder_container::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.f {
+    position: relative;
+}
+
+.ff {
+    display: none;
+    position: absolute;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    border: 2px solid var(--color-1);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 999;
+    background-color: var(--color-3);
+    top: auto;
+    left: auto;
+    width: max-content;
+    max-width: 750px;
+    max-height: 750px;
+    padding: 10px;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles_tiktok.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles_folders.css">
+    <link rel="stylesheet" type="text/css" href="./css/fontawesome612/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./media/fox_hound.png">
+    <title>Organizador Archivos</title>
+</head>
+
+<body class="flex-column">
+    <div class="folder_container"></div>
+
+    <div class="thumbnail-video-container flex-row">
+
+        <div class="flex cuadricula tok">
+            <div class="container-file-name">Nombre Archivo</div>
+            <div class="file-name-editor invisible"><input type="text"></div>
+
+            <form method="post" enctype="multipart/form-data" class="flex column">
+                <h1>Escalar</h1>
+                <div class="flex row">
+                    <input type="text" id="resolucionW" name="resolucionW" value='1920'>
+                    <span>:</span>
+                    <input type="text" id="resolucionH" name="resolucionH" value='1080'>
+                </div>
+                <div class="flex row">
+                    <label for="interruptorMitad">Mitad</label>
+                    <input type="checkbox" id="interruptorMitad">
+                    <label for="interruptorDoble">Doble</label>
+                    <input type="checkbox" id="interruptorDoble">
+                </div>
+                <button type="button" class="loader" onclick="escalar()">Escalar</button>
+            </form>
+
+            <form method="post" enctype="multipart/form-data" class="flex column">
+                <h1>Recortar</h1>
+                <span id="valorSlider1">6</span>
+                <input type="range" name="slider1" min="0" max="12" step="0.01" value="6" id="slider1">
+                <div>
+                    <button class="angles" type="button" id="dobleFlechaIzquierda"><i
+                            class="fa-solid fa-angles-left"></i></button>
+                    <button class="angles" type="button" id="flechaIzquierda"><i
+                            class="fa-solid fa-angle-left"></i></button>
+                    <button class="angles" type="button" id="restaurar"><i
+                            class="fa-solid fa-rotate-right"></i></button>
+                    <button class="angles" type="button" id="flechaDerecha"><i
+                            class="fa-solid fa-angle-right"></i></button>
+                    <button class="angles" type="button" id="dobleFlechaDerecha"><i
+                            class="fa-solid fa-angles-right"></i></button>
+                </div>
+                <input type="range" name="slider2" min="2.1" max="10" step="0.001" value="6" id="slider2"
+                    class="invisible">
+                <span id="valorSlider2" class="invisible">16</span>
+                <div class="flex row">
+                    <label for="disjunta">Disjunta</label>
+                    <input type="checkbox" id="disjunta">
+                </div>
+                <button type="button" class="loader" onclick="recortar()">Recortar</button>
+            </form>
+
+            <form method="post" enctype="multipart/form-data" class="flex column">
+                <h1>Rotar</h1>
+                <select id="giro" name="giro">
+                    <option>Seleccionar rotacion</option>
+                    <option value="0">90 grados anti-horario espejo</option>
+                    <option value="1">90 grados</option>
+                    <option value="2">90 grados anti-horario</option>
+                    <option value="3">90 grados efecto espejo</option>
+                </select>
+                <div class="flex row">
+                    <label for="giroMitad">Reducir</label>
+                    <input type="checkbox" id="giroMitad" name="giroMitad">
+                    <input id="resolucionWGiro" name="resolucionWGiro" value='1' class="invisible">
+                    <input id="resolucionHGiro" name="resolucionHGiro" value='1' class="invisible">
+                </div>
+                <button type="button" class="loader" onclick="rotar()">Rotar</button>
+            </form>
+
+            <form method="post" enctype="multipart/form-data" class="flex column">
+                <h1>Longitud</h1>
+                <div class="flex row">
+                    <input type="text" id="tiempo" name="tiempo" value='00:00'>
+                </div>
+                <!-- <input type="range" name="sliderTiempo" min="0" max="60" step="1" value="0" id="sliderTiempo"> -->
+                <div class="flex row">
+                    <label for="interruptorLongitudMitad">Mitad</label>
+                    <input type="checkbox" id="interruptorLongitudMitad">
+                </div>
+                <button type="button" class="loader" onclick="cortarTiempo()">Cortar</button>
+            </form>
+
+        </div>
+
+        <ul class="thumbnail-grid" id="video-list">
+            <!-- La lista de videos irá aqui -->
+        </ul>
+
+        <div class="upper-video-container flex-column">
+            <div class="video-container hidden" id="video-container">
+                <video id="video-player" controls autoplay loop>
+                    <source id="video-source" src="" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-metadata"></div>
+        </div>
+
+        <div class="botones-izq">
+            <button class="boton-nombre" onclick="mostrarNombreAndPath()"><i
+                    class="fa-sharp fa-solid fa-info"></i></button>
+            <button class="boton-buscar" onclick="buscarArchivo()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="boton-padre" data-folder-path="" onclick="moverArchivo(event)"
+                oncontextmenu="cambiarCarpeta2(event)">.
+                <!-- <i class="fa-solid fa-feather"></i> -->
+            </button>
+        </div>
+        <div class="botones-der">
+            <button class="refrescar" onclick="llamada()"><i class="fa-solid fa-rotate-right"></i></button>
+            <button class="deshacer" onclick="deshacer()"><i class="fa-solid fa-rotate-left"></i></button>
+        </div>
+        <!-- <button class="boton-path" onclick="mostrarPath()"><i class="fa-regular fa-folder-open"></i></i></button> -->
+
+        <div class="cambiar-ruta-carpeta">
+            <p>Elegir ruta carpeta</p>
+            <input type="text" class="ruta-carpeta"></input>
+            <button class="mandar" onclick="cambiarCarpeta()">Cambiar Carpeta</button>
+        </div>
+
+        <div class="barraBuscador">
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
+        </div>
+    </div>
+
+    <div class="carpetaPadre"></div>
+
+    <div class="nombre-archivo-carpeta">
+        <p>Ruta Carpeta</p>
+        <div class="nombre-carpeta">
+            <p></p>
+        </div>
+        <button class="copy-button" onclick="copiarAlClipboard('.nombre-carpeta')"><i
+                class="fa-solid fa-clipboard-check"></i></button>
+        <p>Nombre Archivo</p>
+        <div class="nombre-archivo">
+            <p></p>
+        </div>
+        <button class="copy-button" onclick="copiarAlClipboard('.nombre-archivo')"><i
+                class="fa-solid fa-clipboard-check"></i></button>
+    </div>
+
+    <div class="variado">
+        <!-- <i class="fa-solid fa-chevron-left"></i> -->
+        <button class="theme" onclick="cambiarTema()"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        <button class="theme" onclick="loadThumbnails()"><i class="fa-solid fa-file-arrow-down"></i></button>
+        <button class="theme" onclick="createFolder()"><i class="fa-solid fa-folder-plus"></i></button>
+        <button class="theme" onclick="elegirCarpeta()"><i class="fa-solid fa-folder-open"></i></button>
+        <button class="theme" onclick="tikTok()"><i class="fa-brands fa-tiktok"></i></button>
+        <button class="theme" onclick="moverBorrar()"><i class="fa-regular fa-trash-can"></i></button>
+        <button class="theme" onclick=""><i class="fa-regular fa-circle-question"></i></button>
+    </div>
+
+    <div class="creacion-ruta-carpeta">
+        <p>Ruta carpeta - main</p>
+        <input type="text" class="principal"></input>
+        <p>Subcarpeta - sub</p>
+        <input type="text" class="secundaria"></input>
+        <button class="mandar" onclick="mandarCarpeta()">Crear Carpeta</button>
+    </div>
+
+
+
+
+
+    <div class="cargando-contenedor">
+        <div class="cargando"></div>
+    </div>
+
+    <!-- <input type="text" id="searchInput" placeholder="Search files..."> -->
+    <div class="video-count"></div>
+    <div class="overwrite"></div>
+
+    <script src="./scripts/general.js"></script>
+    <script src="./scripts/funcionesPochas.js"></script>
+    <script src="./scripts/shortcuts.js"></script>
+    <script src="./scripts/fetch/fetchListaVideos.js"></script>
+    <script src="./scripts/fetch/fetchListaCarpetas.js"></script>
+    <script src="./scripts/fetch/fetchMover.js"></script>
+    <script src="./scripts/fetch/fetchBorrar.js"></script>
+    <script src="./scripts/fetch/fetchCrearCarpeta.js"></script>
+    <script src="./scripts/tiktok/generalTiktok.js"></script>
+    <script src="./scripts/tiktok/escalar.js"></script>
+    <script src="./scripts/tiktok/recortar.js"></script>
+    <script src="./scripts/tiktok/rotar.js"></script>
+    <script src="./scripts/tiktok/recortarTiempo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+:root {
+    --color-1: #948cf9;
+    --color-2: #5d3bec;
+    --color-3: #e9e9fe;
+    --color-4: #dbdbfe;
+}
+
+:root.dark-theme2 {
+    --color-1: #5a53b3;
+    --color-2: #3b2a92;
+    --color-3: #8c8cbf;
+    --color-4: #7a7aa7;
+}
+
+:root.dark-theme {
+    --color-1: #6b5bb5;
+    --color-2: #3b2a8c;
+    --color-3: #b0b0d9;
+    --color-4: #a3a3d1;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.cuadricula {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.maxwidth {
+    width: 100%;
+    height: 75vh;
+}
+
+.invisible {
+    display: none;
+}
+
+.tok {
+    border-right: 2px solid var(--color-1);
+    display: none;
+    width: 50%;
+    /* max-height: 90.5vh;
+    min-height: 90.5vh; */
+
+    * {
+        margin: 3px;
+        /* padding: 2px; */
+        border-radius: unset;
+    }
+}
+
+form {
+    border: 2px solid var(--color-1);
+    margin: 12px;
+    padding: 15px;
+    width: 425px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 22px;
+    color: var(--color-1);
+}
+
+label {
+    font-size: 18px;
+    color: var(--color-1);
+}
+
+span {
+    font-size: 16px;
+    color: var(--color-1);
+}
+
+#ruta {
+    width: 400px;
+}
+
+.container-file-name {
+    width: 850px;
+    height: 50px;
+    border: 2px solid var(--color-1);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--color-1);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#casillaVideo {
+    display: none;
+    position: relative;
+    /* background: rgba(0, 0, 0, 0.8); */
+    background: var(--color-1);
+    padding: 7px;
+    border-radius: 10px;
+}
+
+#video {
+    max-height: 78vh;
+    max-width: 100%;
+}
+
+input[type=file] {
+    width: 350px;
+    height: 60px;
+    border: solid 2px var(--color-1);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+input[type=text] {
+    width: 50px;
+    border: solid 2px var(--color-1);
+    border-radius: 5px;
+    background-color: var(--color-3);
+    padding: 3px;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    width: 200px;
+    border: solid 2px var(--color-1);
+    border-radius: 5px;
+    background-color: var(--color-3);
+    color: var(--color-1);
+}
+
+select::after {
+    content: "\25BC";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--color-1);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--color-1);
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 225px;
+    height: 8px;
+    background: var(--color-1);
+    transition: opacity 0.2s;
+    opacity: 0.7;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+input[type=range]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-2);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#botonR {
+    background-image: url("../media/boton.png");
+    background-color: transparent;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+
+.cargando-contenedor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #938cf69e;
+    z-index: 999;
+    margin: 0;
+}
+
+.cargando {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    animation: rueda 1.25s linear infinite;
+    position: absolute;
+    top: 27%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    background-image: url(../media/fox_hound.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes rueda {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.flechita {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.angles {
+    border: none;
+    background-color: var(--color-3);
+    color: var(--color-1);
+    margin: 0;
+    cursor: pointer;
+}
+
+.file-name-editor {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-1);
+    padding: 3px;
+    border-radius: 10px;
+    z-index: 999;
+    /* width: 400px; */
+}
+
+.file-name-editor input {
+    /* width: 70%; */
+    width: 600px;
+    height: 100px;
+    border: none;
+    background-color: var(--color-4);
+    color: var(--color-1);
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    word-wrap: break-word;
+    /* Allows long words to be broken and wrap onto the next line */
+    word-break: break-all;
+    /* Breaks words at any character to ensure they fit within the container */
+    white-space: normal;
+    /* Ensures that text will wrap normally */
+}
+
+.file-name-editor input:focus {
+    outline: none;
+    background-color: var(--color-3);
+}
+
+.file-name-editor div {
+    width: 20%;
+}
