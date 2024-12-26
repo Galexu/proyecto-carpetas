@@ -9,6 +9,7 @@ import trash from 'trash';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { exec } from 'child_process';
+import { spawn } from 'child_process';
 
 // /**
 //  * Opens Windows File Explorer and searches for a specific file.
@@ -39,7 +40,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const puerto = 3000;
+const puerto = 8313;
 let directorioVideo__ = 'D:\\Stuff\\Desktop\\b\\awemer\\download';
 let directorioCarpeta__ = 'D:\\Stuff\\Desktop\\b\\awemer\\download';
 const directorioThumbnail__ = path.join(__dirname, 'thumbnails');
@@ -93,7 +94,6 @@ async function carpetaInferior(carp) {
             //         </button>`;
             //     }
             // });
-
 
             carpetas.forEach(carpeta => {
                 if (carpeta.isDirectory()) {
@@ -359,6 +359,38 @@ app.listen(puerto, () => {
 
 // --------------------------------------------------- TIKTOK ---------------------------------------------------
 
+
+
+// app.post('/escalar', (req, res) => {
+//     console.log("Escalando archivo...");
+//     let { archivoPath, nombre, resoW, resoH, directorio } = req.body;
+//     const nombreParseado = path.parse(nombre);
+//     const nombreSolo = nombreParseado.name + '1';
+//     const extension = nombreParseado.ext;
+
+//     if (resoW % 2 != 0) {
+//         resoW = resoW + 1;
+//     }
+//     if (resoH % 2 != 0) {
+//         resoH = resoH + 1;
+//     }
+
+//     const comandoEscalar = 'ffmpeg -i "' + archivoPath + '" -vf scale=' + resoW + ':' + resoH + ' -c:a copy "' + directorio + nombreSolo + extension + '"';
+//     // console.log("comando", comandoEscalar);
+//     exec(comandoEscalar, (error, stdout, stderr) => {
+//         if (error) {
+//             console.error(`Error al ejecutar el comando: ${error.message}`);
+//             return res.status(500).send(`Error al ejecutar el comando: ${error.message}`);
+//         }
+//         if (stderr) {
+//             console.error(`Error en ffmpeg: ${stderr}`);
+//             return res.status(500).send(`Error en ffmpeg: ${stderr}`);
+//         }
+//         // console.log(`Salida de ffmpeg: ${stdout}`);
+//         res.send(`Archivo escalado exitosamente: ${outputFile}`);
+//     });
+// });
+
 app.post('/escalar', (req, res) => {
     console.log("Escalando archivo...");
     let { archivoPath, nombre, resoW, resoH, directorio } = req.body;
@@ -373,18 +405,23 @@ app.post('/escalar', (req, res) => {
         resoH = resoH + 1;
     }
 
-    const comandoEscalar = 'ffmpeg -i "' + archivoPath + '" -vf scale=' + resoW + ':' + resoH + ' -c:a copy "' + directorio + nombreSolo + extension + '"';
-    // console.log("comando", comandoEscalar);
-    exec(comandoEscalar, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error al ejecutar el comando: ${error.message}`);
-            return res.status(500).send(`Error al ejecutar el comando: ${error.message}`);
+    const outputFile = path.join(directorio, nombreSolo + extension);
+    const comandoEscalar = ['-i', archivoPath, '-vf', `scale=${resoW}:${resoH}`, '-c:a', 'copy', outputFile];
+    const procesoEscalar = spawn('ffmpeg', comandoEscalar);
+
+    // procesoEscalar.stdout.on('data', (data) => {
+    //     console.log(data);
+    // });
+
+    procesoEscalar.stderr.on('data', (data) => {
+        console.error(`stderr: ${data}`);
+    });
+
+    procesoEscalar.on('close', (code) => {
+        if (code !== 0) {
+            console.error(`Proceso terminado con código ${code}`);
+            return res.status(500).send(`Error al ejecutar el comando: Proceso terminado con código ${code}`);
         }
-        if (stderr) {
-            console.error(`Error en ffmpeg: ${stderr}`);
-            return res.status(500).send(`Error en ffmpeg: ${stderr}`);
-        }
-        // console.log(`Salida de ffmpeg: ${stdout}`);
         res.send(`Archivo escalado exitosamente: ${outputFile}`);
     });
 });

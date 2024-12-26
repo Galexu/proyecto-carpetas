@@ -53,9 +53,9 @@ document.addEventListener('keydown', (event) => {
             }
         }
 
-        if (event.key === 'q') selectedVideo(parseInt(identificadorActual) - 1, "-");
+        if (event.key === 'q') videoSeleccionado(parseInt(identificadorActual) - 1, "-");
 
-        if (event.key === 'e') selectedVideo(parseInt(identificadorActual) + 1, "+");
+        if (event.key === 'e') videoSeleccionado(parseInt(identificadorActual) + 1, "+");
 
         if (event.key === 't') {
             document.body.focus();
@@ -73,6 +73,7 @@ document.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             event.preventDefault();
         }
+
         const videoElement = document.querySelector('video');
         if (videoElement) {
             if (event.key === 'ArrowRight' || event.key === 'd') {

@@ -95,16 +95,21 @@ function ajustarAlturaThumbnailGrid(a) {
 }
 
 function mostrarNombreAndPath() {
-    const divNombreAndCarpeta = document.querySelector('.nombre-archivo-carpeta');
+    const divNombreAndCarpeta = document.querySelector('.informacion-archivo');
     const divNombreArchivo = document.querySelector('.nombre-archivo');
-    const divNombreCarpeta = document.querySelector('.nombre-carpeta');
+    const divNombreCompleto = document.querySelector('.nombre-completo');
+    const divResolucion = document.querySelector('.resolucion');
+    const thumbnailGrid = document.querySelector(".thumbnail-grid");
 
     divNombreArchivo.textContent = archivoNombre;
-    divNombreCarpeta.textContent = archivoPath;
+    divNombreCompleto.textContent = archivoPath;
+    divResolucion.textContent = width + " : " + height;
 
     if (divNombreAndCarpeta.style.display == "flex") {
         divNombreAndCarpeta.style.display = "none";
+        thumbnailGrid.style.display = "grid";
     } else {
+        thumbnailGrid.style.display = "none";
         divNombreAndCarpeta.style.display = "flex";
     }
 }
@@ -144,10 +149,12 @@ async function cambiarCarpeta2(event) {
 
 function buscarArchivo() {
     const buscadorContainer = document.querySelector('.barraBuscador');
+    const buscadorInput = document.getElementById('buscador');
     const computedStyle = window.getComputedStyle(buscadorContainer);
 
     if (computedStyle.display === 'none') {
         buscadorContainer.style.display = 'block';
+        buscadorInput.focus();
     } else {
         buscadorContainer.style.display = 'none';
     }
@@ -166,6 +173,7 @@ document.getElementById('buscador').addEventListener('input', function () {
         }
     });
 });
+
 
 
 

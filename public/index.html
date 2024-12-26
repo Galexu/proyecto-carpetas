@@ -96,6 +96,20 @@
 
         </div>
 
+        <div class="informacion-archivo">
+            <p>Nombre Archivo <button class="copy-button" onclick="copiarAlClipboard('.nombre-archivo')"><i
+                        class="fa-solid fa-clipboard-check"></i></button></p>
+            <p class="nombre-archivo"></p>
+
+            <p>Ruta Completa <button class="copy-button" onclick="copiarAlClipboard('.nombre-carpeta')"><i
+                        class="fa-solid fa-clipboard-check"></i></button></p>
+            <p class="nombre-completo"></p>
+
+            <p>Resolucion <button class="copy-button" onclick="copiarAlClipboard('.nombre-carpeta')"><i
+                        class="fa-solid fa-clipboard-check"></i></button></p>
+            <p class="resolucion"></p>
+        </div>
+
         <ul class="thumbnail-grid" id="video-list">
             <!-- La lista de videos irá aqui -->
         </ul>
@@ -114,7 +128,7 @@
                     class="fa-sharp fa-solid fa-info"></i></button>
             <button class="boton-buscar" onclick="buscarArchivo()"><i class="fa-solid fa-magnifying-glass"></i></button>
             <button class="boton-padre" data-folder-path="" onclick="moverArchivo(event)"
-                oncontextmenu="cambiarCarpeta2(event)">.
+                oncontextmenu="cambiarCarpeta2(event)">P
                 <!-- <i class="fa-solid fa-feather"></i> -->
             </button>
         </div>
@@ -136,21 +150,6 @@
     </div>
 
     <div class="carpetaPadre"></div>
-
-    <div class="nombre-archivo-carpeta">
-        <p>Ruta Carpeta</p>
-        <div class="nombre-carpeta">
-            <p></p>
-        </div>
-        <button class="copy-button" onclick="copiarAlClipboard('.nombre-carpeta')"><i
-                class="fa-solid fa-clipboard-check"></i></button>
-        <p>Nombre Archivo</p>
-        <div class="nombre-archivo">
-            <p></p>
-        </div>
-        <button class="copy-button" onclick="copiarAlClipboard('.nombre-archivo')"><i
-                class="fa-solid fa-clipboard-check"></i></button>
-    </div>
 
     <div class="variado">
         <!-- <i class="fa-solid fa-chevron-left"></i> -->
